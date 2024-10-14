@@ -112,15 +112,35 @@ __reset:
         ;<<insert more user code here>>
 
 
-;SETM    AD1PCFGL  ;PORTB AS DIGITAL
-;CLR	TRISB
-SETM	W10
-
+SETM    AD1PCFGL		;PORTB AS DIGITAL
+CLR	TRISB			;PORTB AS OUTPUTS
+SETM	PORTB			;PORTB = 0XFFFF
+MOV	#0X4087,    W0
+MOV	W0,	    0X0800	;Example of store in a specific address
 	
-done:	    ;INFINITE LOOP
+MOV	#0X0800,    W1		;W1 as a pointer of the address 0x0800
+MOV	[W1++],	    W2		;Get data from specific address using a pointer
+	
+	    
+    MOV	    #20000,	    W7
+    LOOP1:
+    CP0	    W7			;(1 Cycle)
+    BRA	    Z,	    END_DELAY	;(1 Cycle if not jump)
+    DEC	    W7,	    W7		;(1 Cycle)
     
-    COM	    W10,    W10
+    MOV	    #10,	    W8		;(1 Cycle)
+    LOOP2:
+    DEC	    W8,	    W8		;(1 Cycle)
+    CP0	    W8			;(1 Cycle)
+    BRA	    Z,	    LOOP1	;(1 Cycle if not jump)
+    BRA	    LOOP2		;(2 Cycle if jump)
     
+   END_DELAY:
+    NOP
+        
+    done:	    ;INFINITE LOOP    
+    COM	    PORTB
+    NOP
     BRA     done              ;Place holder for last line of executed code
 
 

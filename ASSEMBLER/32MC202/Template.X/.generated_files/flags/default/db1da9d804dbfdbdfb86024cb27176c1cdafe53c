@@ -1,1 +1,0 @@
- -c -mcpu=$(MP_PROCESSOR_OPTION)  -DXPRJ_default=$(CND_CONF)    -Wa,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"C:\Dropbox\Escom\Dspic\33EPFamily\DSPIC33FJ\GitAlumnosArqui\ASSEMBLER\32MC202\Template.X\newmainasm33.s
