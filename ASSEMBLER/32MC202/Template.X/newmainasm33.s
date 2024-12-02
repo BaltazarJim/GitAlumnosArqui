@@ -13,12 +13,13 @@
     
     ;Internal Fast RC (FRC)
     ;Start-up device with user-selected oscillator source
-    #pragma config __FOSCSEL, FNOSC_FRC & IESO_ON
+    #pragma config __FOSCSEL, FNOSC_PRI & IESO_OFF
+    ;#pragma config __FOSCSEL, FNOSC_FRC & IESO_ON
     
     ;Both Clock Switching and Fail-Safe Clock Monitor are disabled
     ;XT mode is a medium-gain, medium-frequency mode that is used to work with crystal
-    ;frequencies of 3.5-10 MHz
-  ; #pragma config __FOSC, FCKSM_CSDCMD & POSCMD_XT
+    ;frequencies of 3.5-10 MHz //Datacheet
+    #pragma config __FOSC, FCKSM_CSECME & POSCMD_XT
     
     ;Watchdog timer enabled/disabled by user software
     #pragma config __FWDT, FWDTEN_OFF
@@ -121,7 +122,13 @@ MOV	W0,	    0X0800	;Example of store in a specific address
 MOV	#0X0800,    W1		;W1 as a pointer of the address 0x0800
 MOV	[W1++],	    W2		;Get data from specific address using a pointer
 	
+done:	    ;INFINITE LOOP    
+    COM	    PORTB
+    CALL    Delay1sec
+    BRA     done              ;Place holder for last line of executed code
 	    
+Delay1sec:    
+    
     MOV	    #20000,	    W7
     LOOP1:
     CP0	    W7			;(1 Cycle)
@@ -137,11 +144,10 @@ MOV	[W1++],	    W2		;Get data from specific address using a pointer
     
    END_DELAY:
     NOP
+    
+RETURN
         
-    done:	    ;INFINITE LOOP    
-    COM	    PORTB
-    NOP
-    BRA     done              ;Place holder for last line of executed code
+
 
 
 
