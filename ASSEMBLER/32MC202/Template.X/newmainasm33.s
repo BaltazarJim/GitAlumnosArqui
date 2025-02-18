@@ -114,28 +114,75 @@ __reset:
 
 
 SETM    AD1PCFGL		;PORTB AS DIGITAL
-CLR	TRISB			;PORTB AS OUTPUTS
-SETM	PORTB			;PORTB = 0XFFFF
-MOV	#0X4087,    W0
-MOV	W0,	    0X0800	;Example of store in a specific address
+
+MOV	#0X000F,    W0
+MOV	W0,	    TRISB
 	
-MOV	#0X0800,    W1		;W1 as a pointer of the address 0x0800
-MOV	[W1++],	    W2		;Get data from specific address using a pointer
 	
 done:	    ;INFINITE LOOP    
-    COM	    PORTB
-    CALL    Delay1sec
-    BRA     done              ;Place holder for last line of executed code
-	    
-Delay1sec:    
+    MOV	    PORTB,	W0
     
-    MOV	    #20000,	    W7
+    CP0.B   W0    
+    BRA	    Z,	done
+    
+    CP.B    W0,		#1
+    BRA	    Z,	_P25
+    
+    CP.B	    W0,		#3
+    BRA	    Z,	_P50
+    
+    CP.B	    W0,		#7
+    BRA	    Z,	_P75
+    
+    CP.B	    W0,		#15
+    BRA	    Z,	_P100
+    BRA	    done
+    
+    _P25:
+    BSET    PORTB,	#9
+    CALL    Delay250msec
+    BCLR    PORTB,	#9
+    CALL    Delay250msec
+    CALL    Delay250msec
+    CALL    Delay250msec       
+    BRA done
+    
+    _P50:
+    BSET    PORTB,	#9
+    CALL    Delay250msec
+    CALL    Delay250msec
+    
+    BCLR    PORTB,	#9
+    CALL    Delay250msec
+    CALL    Delay250msec       
+    BRA done
+    
+    _P75:
+    BSET    PORTB,	#9
+    CALL    Delay250msec
+    CALL    Delay250msec
+    CALL    Delay250msec
+    
+    BCLR    PORTB,	#9
+    CALL    Delay250msec       
+    BRA done
+    
+    _P100:
+    BSET    PORTB,	#9     
+    BRA done
+    
+    
+    
+	    
+Delay250msec:    
+    
+    MOV	    #1845,	    W7
     LOOP1:
     CP0	    W7			;(1 Cycle)
     BRA	    Z,	    END_DELAY	;(1 Cycle if not jump)
     DEC	    W7,	    W7		;(1 Cycle)
     
-    MOV	    #10,	    W8		;(1 Cycle)
+    MOV	    #100,	    W8		;(1 Cycle)
     LOOP2:
     DEC	    W8,	    W8		;(1 Cycle)
     CP0	    W8			;(1 Cycle)

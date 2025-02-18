@@ -1,24 +1,24 @@
-Microchip Technology Inc, v2.00 (B)
+Microchip Technology Inc, v2.10 (B)
 
 Tool Name:
-  c:\program files\microchip\xc16\v2.00\bin\bin\..\bin/elf-ld.exe
+  c:\program files\microchip\xc16\v2.10\bin\bin\..\bin/elf-ld.exe
 
 Command:
   -p33FJ32MC202 \
-  --mdfp=C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16 \
+  --mdfp=C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16 \
   -o \
   dist/default/production/Template.X.production.elf \
-  -Lc:/program files/microchip/xc16/v2.00/bin/bin/.. \
-  -LC:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16/bin/../support/PIC24H/gld \
-  -LC:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16/bin/../support/dsPIC33F/gld \
-  -Lc:/program files/microchip/xc16/v2.00/bin/bin/../../lib \
-  -Lc:/program files/microchip/xc16/v2.00/bin/bin/../../support/PIC24E/gld \
-  -Lc:/program files/microchip/xc16/v2.00/bin/bin/../../support/PIC24F/gld \
-  -Lc:/program files/microchip/xc16/v2.00/bin/bin/../../support/PIC24H/gld \
-  -Lc:/program files/microchip/xc16/v2.00/bin/bin/../../support/dsPIC30F/gld \
-  -Lc:/program files/microchip/xc16/v2.00/bin/bin/../../support/dsPIC33C/gld \
-  -Lc:/program files/microchip/xc16/v2.00/bin/bin/../../support/dsPIC33E/gld \
-  -Lc:/program files/microchip/xc16/v2.00/bin/bin/../../support/dsPIC33F/gld \
+  -Lc:/program files/microchip/xc16/v2.10/bin/bin/.. \
+  -LC:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16/bin/../support/PIC24H/gld \
+  -LC:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/dsPIC33F-GP-MC_DFP/1.3.64/xc16/bin/../support/dsPIC33F/gld \
+  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../lib \
+  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/PIC24E/gld \
+  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/PIC24F/gld \
+  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/PIC24H/gld \
+  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/dsPIC30F/gld \
+  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33C/gld \
+  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33E/gld \
+  -Lc:/program files/microchip/xc16/v2.10/bin/bin/../../support/dsPIC33F/gld \
   build/default/production/newmainasm33.o \
   --defsym=__MPLAB_BUILD=1 \
   -Tp33FJ32MC202.gld.00 \
@@ -47,15 +47,15 @@ Command:
 Optional library libp33FJ32MC202.a not found
 Archive member included because of file (symbol)
 
-c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
+c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
                               (__resetPRI)
-c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
-                              c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o) (__data_init_standard)
-c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(crt_start_mode_normal.Meo)
+c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
+                              c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o) (__data_init_standard)
+c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt_start_mode_normal.Meo)
                               (__crt_start_mode_normal)
 
 
-xc16-ld 2.00 (B)
+xc16-ld 2.10 (B)
 
 Default Code Model: Small
 Default Data Model: Small
@@ -66,11 +66,11 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0x82            0xc3  (195)
-.text                        0x282                0x44            0x66  (102)
-.dinit                       0x2c6                0x14            0x1e  (30)
-.myconstbuffer               0x2da                 0x8             0xc  (12)
+.text                        0x282                0x92            0xdb  (219)
+.dinit                       0x314                0x14            0x1e  (30)
+.myconstbuffer               0x328                 0x8             0xc  (12)
 
-                 Total "program" memory used (bytes):          0x153  (339) 1%
+                 Total "program" memory used (bytes):          0x1c8  (456) 1%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x800]
@@ -100,7 +100,7 @@ External Symbols in Program Memory (by address):
                   0x000206                  __data_init
                   0x00027c                  __DefaultInterrupt
                   0x000282                  __reset
-                  0x0002ba                  _wreg_init
+                  0x000308                  _wreg_init
 
 External Symbols in Program Memory (by name):
 
@@ -108,7 +108,7 @@ External Symbols in Program Memory (by name):
                   0x000206                  __data_init
                   0x000206                  __data_init_standard
                   0x000282                  __reset
-                  0x0002ba                  _wreg_init
+                  0x000308                  _wreg_init
 
 Memory Configuration
 
@@ -137,7 +137,7 @@ Linker script and memory map
 LOAD build/default/production/newmainasm33.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD p33FJ32MC202
-LOAD c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libfx-elf.a
+LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libfx-elf.a
                     0xf80000                  __FBS = 0xf80000
                     0xf80004                  __FGS = 0xf80004
                     0xf80006                  __FOSCSEL = 0xf80006
@@ -167,7 +167,7 @@ LOAD c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libfx-elf.a
 
 .text             0x000200         0x82
  *(.init)
- .init            0x000200         0x7c c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
+ .init            0x000200         0x7c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
                   0x000206                  __data_init_standard
                   0x000206                  __data_init
  *(.user_init)
@@ -180,7 +180,7 @@ LOAD c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libfx-elf.a
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x000280          0x2 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(crt_start_mode_normal.Meo)
+                  0x000280          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt_start_mode_normal.Meo)
                   0x000280                  __crt_start_mode
                   0x000280                  __crt_start_mode_normal
 
@@ -232,9 +232,9 @@ __FUID3
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x14 build/default/production/newmainasm33.o
 
-.debug_line       0x000000         0x5f
+.debug_line       0x000000         0x7b
  *(.debug_line)
- .debug_line      0x000000         0x5f build/default/production/newmainasm33.o
+ .debug_line      0x000000         0x7b build/default/production/newmainasm33.o
 
 .debug_frame
  *(.debug_frame)
@@ -254,10 +254,10 @@ __FUID3
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000         0x18
+.debug_aranges    0x000000         0x20
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x18 build/default/production/newmainasm33.o
+                  0x000000         0x20 build/default/production/newmainasm33.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -887,18 +887,18 @@ __FUID3
                     0x0220                  UART1 = 0x220
                     0x0220                  _UART1 = 0x220
 START GROUP
-LOAD c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a
-LOAD c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libm-elf.a
-LOAD c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-elf.a
+LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a
+LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libm-elf.a
+LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a
 END GROUP
 OUTPUT(dist/default/production/Template.X.production.elf elf32-pic30)
 LOAD default_isr
 LOAD data_init
 
 __c30_signature
-                  0x000018          0x6
+                  0x000020          0x6
  __c30_signature
-                  0x000018          0x6 c:/program files/microchip/xc16/v2.00/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
+                  0x000020          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
 
 .nbss               0x0800          0x2
  .nbss              0x0800          0x2 build/default/production/newmainasm33.o
@@ -909,14 +909,14 @@ __c30_signature
 .ybss               0x0c00         0x80
  .ybss              0x0c00         0x80 build/default/production/newmainasm33.o
 
-.text             0x000282         0x44
- .text            0x000282         0x44 build/default/production/newmainasm33.o
+.text             0x000282         0x92
+ .text            0x000282         0x92 build/default/production/newmainasm33.o
                   0x000282                  __reset
-                  0x0002ba                  _wreg_init
+                  0x000308                  _wreg_init
 
-.dinit            0x0002c6         0x14
- .dinit           0x0002c6         0x14 data_init
+.dinit            0x000314         0x14
+ .dinit           0x000314         0x14 data_init
 
-.myconstbuffer    0x0002da          0x8
+.myconstbuffer    0x000328          0x8
  .myconstbuffer
-                  0x0002da          0x8 build/default/production/newmainasm33.o
+                  0x000328          0x8 build/default/production/newmainasm33.o
