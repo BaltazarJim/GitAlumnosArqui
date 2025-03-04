@@ -13,8 +13,7 @@
     
     ;Internal Fast RC (FRC)
     ;Start-up device with user-selected oscillator source
-    #pragma config __FOSCSEL, FNOSC_PRI & IESO_OFF
-    ;#pragma config __FOSCSEL, FNOSC_FRC & IESO_ON
+    #pragma config __FOSCSEL, FNOSC_FRC & IESO_ON
     
     ;Both Clock Switching and Fail-Safe Clock Monitor are disabled
     ;XT mode is a medium-gain, medium-frequency mode that is used to work with crystal
@@ -115,63 +114,14 @@ __reset:
 
 SETM    AD1PCFGL		;PORTB AS DIGITAL
 
-MOV	#0X000F,    W0
+MOV	#0XFF00,    W0
 MOV	W0,	    TRISB
 	
 	
 done:	    ;INFINITE LOOP    
-    MOV	    PORTB,	W0
-    
-    CP0.B   W0    
-    BRA	    Z,	done
-    
-    CP.B    W0,		#1
-    BRA	    Z,	_P25
-    
-    CP.B	    W0,		#3
-    BRA	    Z,	_P50
-    
-    CP.B	    W0,		#7
-    BRA	    Z,	_P75
-    
-    CP.B	    W0,		#15
-    BRA	    Z,	_P100
+    COM	    PORTB
+    CALL    Delay250msec
     BRA	    done
-    
-    _P25:
-    BSET    PORTB,	#9
-    CALL    Delay250msec
-    BCLR    PORTB,	#9
-    CALL    Delay250msec
-    CALL    Delay250msec
-    CALL    Delay250msec       
-    BRA done
-    
-    _P50:
-    BSET    PORTB,	#9
-    CALL    Delay250msec
-    CALL    Delay250msec
-    
-    BCLR    PORTB,	#9
-    CALL    Delay250msec
-    CALL    Delay250msec       
-    BRA done
-    
-    _P75:
-    BSET    PORTB,	#9
-    CALL    Delay250msec
-    CALL    Delay250msec
-    CALL    Delay250msec
-    
-    BCLR    PORTB,	#9
-    CALL    Delay250msec       
-    BRA done
-    
-    _P100:
-    BSET    PORTB,	#9     
-    BRA done
-    
-    
     
 	    
 Delay250msec:    
