@@ -112,19 +112,22 @@ __reset:
         ;<<insert more user code here>>
 
 
-SETM    AD1PCFGL		;PORTB AS DIGITAL
+	SETM    AD1PCFGL		;PORTB AS DIGITAL
 
-MOV	#0XFF00,    W0
-MOV	W0,	    TRISB
+	MOV	#0X00FF,    W0		;PORTB<15:8> AS OUTPUTS
+	MOV	W0,	    TRISB	;PORTB<7:0> AS INPUTS
+		
 	
-	
-done:	    ;INFINITE LOOP    
-    COM	    PORTB
-    CALL    Delay250msec
+done:	    ;INFINITE LOOP          
+    MOV	    PORTB,	    W0		;READ PORTB<7:0>
+    SL	    W0,		    #8,		W0
+    MOV	    W0,		    PORTB
+    CALL    Delay250msec    
+    
     BRA	    done
     
 	    
-Delay250msec:    
+Delay250msec:    ; Use FRC = 7.37 MHz as FOSC
     
     MOV	    #1845,	    W7
     LOOP1:
