@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=newmainasm33.s
+SOURCEFILES_QUOTED_IF_SPACED=extint0_pps.s
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newmainasm33.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/newmainasm33.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/extint0_pps.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/extint0_pps.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/newmainasm33.o
+OBJECTFILES=${OBJECTDIR}/extint0_pps.o
 
 # Source Files
-SOURCEFILES=newmainasm33.s
+SOURCEFILES=extint0_pps.s
 
 
 
@@ -95,18 +95,18 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/newmainasm33.o: newmainasm33.s  .generated_files/flags/default/ca7b6a0b9129834dc924f187b7a7ff4fa8632888 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/extint0_pps.o: extint0_pps.s  .generated_files/flags/default/a67ecd88d0801e56ca856a7608fa020e53568245 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/newmainasm33.o.d 
-	@${RM} ${OBJECTDIR}/newmainasm33.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  newmainasm33.s  -o ${OBJECTDIR}/newmainasm33.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/newmainasm33.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
+	@${RM} ${OBJECTDIR}/extint0_pps.o.d 
+	@${RM} ${OBJECTDIR}/extint0_pps.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  extint0_pps.s  -o ${OBJECTDIR}/extint0_pps.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -omf=elf -DXPRJ_default=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/extint0_pps.o.d",--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_SIMULATOR=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
 	
 else
-${OBJECTDIR}/newmainasm33.o: newmainasm33.s  .generated_files/flags/default/39dce25153d9f8bb9e27546176fe0ab8ac452aeb .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/extint0_pps.o: extint0_pps.s  .generated_files/flags/default/3b32dd12db71f9556a8e5fa8f230911953c696ce .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/newmainasm33.o.d 
-	@${RM} ${OBJECTDIR}/newmainasm33.o 
-	${MP_CC} $(MP_EXTRA_AS_PRE)  newmainasm33.s  -o ${OBJECTDIR}/newmainasm33.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/newmainasm33.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
+	@${RM} ${OBJECTDIR}/extint0_pps.o.d 
+	@${RM} ${OBJECTDIR}/extint0_pps.o 
+	${MP_CC} $(MP_EXTRA_AS_PRE)  extint0_pps.s  -o ${OBJECTDIR}/extint0_pps.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -omf=elf -DXPRJ_default=$(CND_CONF)    -Wa,-MD,"${OBJECTDIR}/extint0_pps.o.d",--defsym=__MPLAB_BUILD=1,-g,--no-relax$(MP_EXTRA_AS_POST)  -mdfp="${DFP_DIR}/xc16"
 	
 endif
 
